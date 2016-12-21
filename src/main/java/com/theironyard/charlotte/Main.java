@@ -30,5 +30,38 @@ public class Main {
             System.out.println("User is asking for current Lots");
             return gson.toJson(lotInventory);
         }));
+
+        Spark.post("/addCar", ((request, response) -> {
+            Car parkRequest = gson.fromJson(request.body(), Car.class);
+            System.out.println("Car is trying to park");
+            System.out.println(parkRequest);
+
+            switch (parkRequest.getLotChoice()) {
+                case "BFE":
+                    if(parkRequest.getCarCost() >= lotInventory.get(0).cost && lotInventory.get(0).capacity - parkRequest.getCarWeight() >= 0) {
+                        //lotInventory.add(0, new ArrayList<>);
+                    }
+                    break;
+                case "CM2":
+                    if(parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarWeight() >= 0) {
+
+                    }
+                    break;
+                case "Paved Paradise":
+                    if(parkRequest.getCarCost() >= lotInventory.get(2).cost && lotInventory.get(2).capacity - parkRequest.getCarWeight() >= 0) {
+
+                    }
+                    break;
+                case "Handicap Parking":
+                    if(parkRequest.getCarCost() >= lotInventory.get(3).cost && lotInventory.get(3).capacity - parkRequest.getCarWeight() >= 0) {
+
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            return "";
+        }));
     }
 }
