@@ -15,6 +15,7 @@ public class Main {
         if (port != null) {
             Spark.port(Integer.valueOf(port));
         }
+
         Spark.before((request, response) -> {
             response.header("Access-Control-Allow-Origin", "*");
 
@@ -26,7 +27,7 @@ public class Main {
         lotInventory.add(new Lot("Handicap Parking", 10,100, new ArrayList<>()));
 
 
-        Spark.get("/lots", ((request, response) -> {
+        Spark.get("/", ((request, response) -> {
             System.out.println("User is asking for current Lots");
             return gson.toJson(lotInventory);
         }));
@@ -65,6 +66,11 @@ public class Main {
                     break;
             }
             return "";
+        }));
+
+        Spark.get("/lots", ((request, response) -> {
+            System.out.println("User is asking for current Lots");
+            return gson.toJson(lotInventory);
         }));
     }
 }
