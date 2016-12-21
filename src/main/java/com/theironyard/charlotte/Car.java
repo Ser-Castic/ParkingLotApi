@@ -11,6 +11,8 @@ public class Car extends ArrayList<Car> {
     int carCost;
     String lotChoice;
 
+    public Car() {
+    }
 
     public Car(String carName, int carWeight, int carCost, String lotChoice) {
         this.carName = carName;

@@ -22,7 +22,7 @@ public class Main {
         });
 
         lotInventory.add(new Lot("BFE", 15, 5, new ArrayList<>()));
-        lotInventory.add(new Lot("CM2", 30, 15, new ArrayList<>()));
+        lotInventory.add(new Lot("C2", 30, 15, new ArrayList<>()));
         lotInventory.add(new Lot("Paved Paradise", 50, 30, new ArrayList<>()));
         lotInventory.add(new Lot("Handicap Parking", 10,100, new ArrayList<>()));
 
@@ -44,7 +44,7 @@ public class Main {
                         lotInventory.get(0).setCapacity(parkRequest.getCarWeight() - lotInventory.get(0).getCapacity());
                     }
                     break;
-                case "CM2":
+                case "C2":
                     if(parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarWeight() >= 0) {
                         lotInventory.get(1).setAddCar(parkRequest);
                         lotInventory.get(1).setCapacity(parkRequest.getCarWeight() - lotInventory.get(1).getCapacity());
