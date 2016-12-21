@@ -27,7 +27,7 @@ public class Main {
         lotInventory.add(new Lot("Handicap Parking", 10,100, new ArrayList<>()));
 
 
-        Spark.get("/", ((request, response) -> {
+        Spark.get("/lot", ((request, response) -> {
             System.out.println("User is asking for current Lots");
             return gson.toJson(lotInventory);
         }));
@@ -66,11 +66,6 @@ public class Main {
                     break;
             }
             return "";
-        }));
-
-        Spark.get("/lots", ((request, response) -> {
-            System.out.println("User is asking for current Lots");
-            return gson.toJson(lotInventory);
         }));
     }
 }
