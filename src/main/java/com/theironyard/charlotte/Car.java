@@ -1,9 +1,11 @@
 package com.theironyard.charlotte;
 
+import java.util.ArrayList;
+
 /**
  * Created by temp on 12/20/16.
  */
-public class Car {
+public class Car extends ArrayList<Car> {
     String carName;
     int carWeight;
     int carCost;
@@ -48,4 +50,6 @@ public class Car {
     public void setCarCost(int carCost) {
         this.carCost = carCost;
     }
+
+
 }
