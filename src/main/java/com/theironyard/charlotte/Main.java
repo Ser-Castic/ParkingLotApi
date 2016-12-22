@@ -49,7 +49,7 @@ public class Main {
                         System.out.println("New Car was added to BFE");
                         lotInventory.get(0).setCapacity(lotInventory.get(0).getCapacity() - parkRequest.getCarWeight());
                     }
-                    return lotInventory.get(0).toString();
+//                    return lotInventory.get(0).toString();
                     //break;
                 case "C2":
                     if (parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarWeight() >= 0) {
@@ -75,6 +75,7 @@ public class Main {
                 default:
                     break;
             }
+            response.redirect("/lot");
             return "";
         }));
     }
