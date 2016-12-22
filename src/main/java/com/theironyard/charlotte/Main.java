@@ -24,7 +24,7 @@ public class Main {
         lotInventory.add(new Lot("BFE", 15, 5, new ArrayList<>()));
         lotInventory.add(new Lot("C2", 30, 15, new ArrayList<>()));
         lotInventory.add(new Lot("Paved Paradise", 50, 30, new ArrayList<>()));
-        lotInventory.add(new Lot("Handicap Parking", 10,100, new ArrayList<>()));
+        lotInventory.add(new Lot("Handicap Parking", 10, 100, new ArrayList<>()));
 
 
         Spark.get("/lot", ((request, response) -> {
@@ -35,7 +35,7 @@ public class Main {
         Spark.post("/addCar", ((request, response) -> {
             Car parkRequest = null;
             try {
-               parkRequest = gson.fromJson(request.body(), Car.class);
+                parkRequest = gson.fromJson(request.body(), Car.class);
             } catch (Exception Ex) {
                 Ex.printStackTrace();
             }
@@ -46,24 +46,29 @@ public class Main {
                 case "BFE":
                     if (parkRequest.getCarCost() >= lotInventory.get(0).cost && lotInventory.get(0).capacity - parkRequest.getCarWeight() >= 0) {
                         lotInventory.get(0).addCarToLot(parkRequest);
-                        lotInventory.get(0).setCapacity(parkRequest.getCarWeight() - lotInventory.get(0).getCapacity());
+                        System.out.println("New Car was added to BFE");
+                        lotInventory.get(0).setCapacity(lotInventory.get(0).getCapacity() - parkRequest.getCarWeight());
                     }
-                    break;
+                    return lotInventory.get(0).toString();
+                    //break;
                 case "C2":
                     if (parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarWeight() >= 0) {
                         lotInventory.get(1).addCarToLot(parkRequest);
+                        System.out.println("New Car was added to C2");
                         lotInventory.get(1).setCapacity(parkRequest.getCarWeight() - lotInventory.get(1).getCapacity());
                     }
                     break;
                 case "Paved Paradise":
                     if (parkRequest.getCarCost() >= lotInventory.get(2).cost && lotInventory.get(2).capacity - parkRequest.getCarWeight() >= 0) {
                         lotInventory.get(2).addCarToLot(parkRequest);
+                        System.out.println("New Car was added to Paved Paradise");
                         lotInventory.get(2).setCapacity(parkRequest.getCarWeight() - lotInventory.get(2).getCapacity());
                     }
                     break;
                 case "Handicap Parking":
                     if (parkRequest.getCarCost() >= lotInventory.get(3).cost && lotInventory.get(3).capacity - parkRequest.getCarWeight() >= 0) {
                         lotInventory.get(3).addCarToLot(parkRequest);
+                        System.out.println("New Car was added to Handicap Parking");
                         lotInventory.get(3).setCapacity(parkRequest.getCarWeight() - lotInventory.get(3).getCapacity());
                     }
                     break;

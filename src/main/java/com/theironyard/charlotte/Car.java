@@ -51,5 +51,8 @@ public class Car {
         this.carCost = carCost;
     }
 
-
+    @Override
+    public String toString() {
+        return getCarName();
+    }
 }

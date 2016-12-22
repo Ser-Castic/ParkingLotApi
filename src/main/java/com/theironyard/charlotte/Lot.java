@@ -64,4 +64,9 @@ public class Lot {
     public void addCarToLot (Car currentCar) {
         car.add(currentCar);
     }
+
+    @Override
+    public String toString() {
+        return "Lot: "+getId()+"\nUpdated Capacity: "+getCapacity()+"\nCost to park: "+getCost()+"\nCars that exist in lot: "+ getCar().toString();
+    }
 }
