@@ -5,25 +5,17 @@ package com.theironyard.charlotte;
  */
 public class Car {
     String carName;
-    int carWeight;
+    int carSize;
     int carCost;
     String lotChoice;
 
     public Car() {
     }
 
-    public Car(String carName, int carWeight, int carCost, String lotChoice) {
+    public Car(String carName, int carSize, int carCost, String lotChoice) {
         this.carName = carName;
-        this.carWeight = carWeight;
+        this.carSize = carSize;
         this.carCost = carCost;
-        this.lotChoice = lotChoice;
-    }
-
-    public String getLotChoice() {
-        return lotChoice;
-    }
-
-    public void setLotChoice(String lotChoice) {
         this.lotChoice = lotChoice;
     }
 
@@ -35,12 +27,12 @@ public class Car {
         this.carName = carName;
     }
 
-    public int getCarWeight() {
-        return carWeight;
+    public int getCarSize() {
+        return carSize;
     }
 
-    public void setCarWeight(int carWeight) {
-        this.carWeight = carWeight;
+    public void setCarSize(int carSize) {
+        this.carSize = carSize;
     }
 
     public int getCarCost() {
@@ -49,6 +41,14 @@ public class Car {
 
     public void setCarCost(int carCost) {
         this.carCost = carCost;
+    }
+
+    public String getLotChoice() {
+        return lotChoice;
+    }
+
+    public void setLotChoice(String lotChoice) {
+        this.lotChoice = lotChoice;
     }
 
     @Override

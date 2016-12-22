@@ -44,32 +44,32 @@ public class Main {
 
             switch (parkRequest.getLotChoice()) {
                 case "BFE":
-                    if (parkRequest.getCarCost() >= lotInventory.get(0).cost && lotInventory.get(0).capacity - parkRequest.getCarWeight() >= 0) {
+                    if (parkRequest.getCarCost() >= lotInventory.get(0).cost && lotInventory.get(0).capacity - parkRequest.getCarSize() >= 0) {
                         lotInventory.get(0).addCarToLot(parkRequest);
                         System.out.println("New Car was added to BFE");
-                        lotInventory.get(0).setCapacity(lotInventory.get(0).getCapacity() - parkRequest.getCarWeight());
+                        lotInventory.get(0).setCapacity(lotInventory.get(0).getCapacity() - parkRequest.getCarSize());
                     }
 //                    return lotInventory.get(0).toString();
                     //break;
                 case "C2":
-                    if (parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarWeight() >= 0) {
+                    if (parkRequest.getCarCost() >= lotInventory.get(1).cost && lotInventory.get(1).capacity - parkRequest.getCarSize() >= 0) {
                         lotInventory.get(1).addCarToLot(parkRequest);
                         System.out.println("New Car was added to C2");
-                        lotInventory.get(1).setCapacity(parkRequest.getCarWeight() - lotInventory.get(1).getCapacity());
+                        lotInventory.get(1).setCapacity(parkRequest.getCarSize() - lotInventory.get(1).getCapacity());
                     }
                     break;
                 case "Paved Paradise":
-                    if (parkRequest.getCarCost() >= lotInventory.get(2).cost && lotInventory.get(2).capacity - parkRequest.getCarWeight() >= 0) {
+                    if (parkRequest.getCarCost() >= lotInventory.get(2).cost && lotInventory.get(2).capacity - parkRequest.getCarSize() >= 0) {
                         lotInventory.get(2).addCarToLot(parkRequest);
                         System.out.println("New Car was added to Paved Paradise");
-                        lotInventory.get(2).setCapacity(parkRequest.getCarWeight() - lotInventory.get(2).getCapacity());
+                        lotInventory.get(2).setCapacity(parkRequest.getCarSize() - lotInventory.get(2).getCapacity());
                     }
                     break;
                 case "Handicap Parking":
-                    if (parkRequest.getCarCost() >= lotInventory.get(3).cost && lotInventory.get(3).capacity - parkRequest.getCarWeight() >= 0) {
+                    if (parkRequest.getCarCost() >= lotInventory.get(3).cost && lotInventory.get(3).capacity - parkRequest.getCarSize() >= 0) {
                         lotInventory.get(3).addCarToLot(parkRequest);
                         System.out.println("New Car was added to Handicap Parking");
-                        lotInventory.get(3).setCapacity(parkRequest.getCarWeight() - lotInventory.get(3).getCapacity());
+                        lotInventory.get(3).setCapacity(parkRequest.getCarSize() - lotInventory.get(3).getCapacity());
                     }
                     break;
                 default:
