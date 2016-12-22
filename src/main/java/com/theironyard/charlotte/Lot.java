@@ -11,13 +11,13 @@ public class Lot {
     int capacity;
     int cost;
     //boolean handicapSign;
-    ArrayList<Car> addCar = new ArrayList<>();
+    ArrayList<Car> car = new ArrayList<>();
 
-    public Lot(String id, int capacity, int cost, ArrayList<Car> addCar) {
+    public Lot(String id, int capacity, int cost, ArrayList<Car> car) {
         this.id = id;
         this.capacity = capacity;
         this.cost = cost;
-        this.addCar = addCar;
+        this.car = car;
     }
 
     public String getId() {
@@ -52,11 +52,16 @@ public class Lot {
 //        this.handicapSign = handicapSign;
 //    }
 
-    public ArrayList<Car> getAddCar() {
-        return addCar;
+
+    public ArrayList<Car> getCar() {
+        return car;
     }
 
-    public void setAddCar(ArrayList<Car> addCar) {
-        this.addCar = addCar;
+    public void setCar(ArrayList<Car> car) {
+        this.car = car;
+    }
+
+    public void addCarToLot (Car currentCar) {
+        car.add(currentCar);
     }
 }

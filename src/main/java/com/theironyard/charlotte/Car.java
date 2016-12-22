@@ -1,11 +1,9 @@
 package com.theironyard.charlotte;
 
-import java.util.ArrayList;
-
 /**
  * Created by temp on 12/20/16.
  */
-public class Car extends ArrayList<Car> {
+public class Car {
     String carName;
     int carWeight;
     int carCost;
